@@ -2,7 +2,7 @@ class Statement {
   constructor() {}
 
   showStatement(transactions) {
-    console.log("date || credit || debit || balance");
+    console.log("date        || credit || debit || balance");
 
     transactions.forEach((item) => {
       const debit = item.amount < 0 ? item.amount : "";
@@ -12,7 +12,7 @@ class Statement {
         dateStyle: "short",
       }).format(date);
       console.log(
-        `${formattedDate}  ||  ${credit}  || ${debit}  ||  ${item.balance}`
+        `${formattedDate}  ||   ${credit}   ||   ${debit}   ||  ${item.balance}`
       );
     });
   }
