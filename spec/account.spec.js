@@ -17,4 +17,12 @@ describe("Account", () => {
     account.addDebit(100);
     expect(account.getBalance()).toBe(-100);
   });
+
+  it("returns all transactions", () => {
+    const account = new Account();
+    account.addCredit(100);
+    account.addDebit(20);
+    expect(account.getTransactions().length).toBe(2);
+    expect(account.getTransactions()[0].amount).toBe(100);
+  });
 });

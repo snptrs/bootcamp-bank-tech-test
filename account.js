@@ -30,5 +30,9 @@ class Account {
       return 0;
     }
   }
+
+  getTransactions() {
+    return this.transactions;
+  }
 }
 module.exports = Account;
