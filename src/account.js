@@ -3,22 +3,11 @@ class Account {
     this.transactions = [];
   }
 
-  addCredit(amount) {
+  addTransaction(amount) {
     const transactionDetails = {
       date: Date.now(),
-      type: "credit",
       amount: amount,
       balance: this.getBalance() + amount,
-    };
-    this.transactions.push(transactionDetails);
-  }
-
-  addDebit(amount) {
-    const transactionDetails = {
-      date: Date.now(),
-      type: "debit",
-      amount: amount,
-      balance: this.getBalance() - amount,
     };
     this.transactions.push(transactionDetails);
   }
