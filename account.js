@@ -8,7 +8,7 @@ class Account {
       date: Date.now(),
       type: "credit",
       amount: amount,
-      balance: this.balance() + amount,
+      balance: this.getBalance() + amount,
     };
     this.transactions.push(transactionDetails);
   }
@@ -18,12 +18,12 @@ class Account {
       date: Date.now(),
       type: "debit",
       amount: amount,
-      balance: this.balance() - amount,
+      balance: this.getBalance() - amount,
     };
     this.transactions.push(transactionDetails);
   }
 
-  balance() {
+  getBalance() {
     if (this.transactions.length > 0) {
       return this.transactions.at(-1).balance;
     } else {
