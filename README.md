@@ -9,3 +9,17 @@ The task is to create a simple banking application, allowing a client to interac
 ## User stories
 - As a client, I want to make deposits and withdrawals so that I can manage my money.
 - As a client, I want to generate a statement so I can see my account balance, along with a list of dates and amounts of withdrawals and deposits.
+
+## Class design
+
+```mermaid
+classDiagram
+Account <|-- Statement
+Account : +Array transactions
+Account: +deposit()
+Account: +withdraw()
+class Statement{
+  +show()
+}
+```
+
