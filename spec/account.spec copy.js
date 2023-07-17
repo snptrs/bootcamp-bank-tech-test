@@ -1,4 +1,4 @@
-const Account = require("../src/account.js");
+const Account = require("../account.js");
 
 describe("Account", () => {
   it("returns the current balance", () => {
