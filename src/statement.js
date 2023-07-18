@@ -8,7 +8,9 @@ class Statement {
       transactions.forEach((item) => {
         // Convert all amounts to floats with 2 decimal places
         const debit =
-          item.amount < 0 ? Number.parseFloat(item.amount).toFixed(2) : "";
+          item.amount < 0
+            ? Number.parseFloat(Math.abs(item.amount)).toFixed(2)
+            : "";
         const credit =
           item.amount > 0 ? Number.parseFloat(item.amount).toFixed(2) : "";
         const balance = Number.parseFloat(item.balance).toFixed(2);
