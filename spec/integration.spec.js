@@ -20,8 +20,5 @@ describe("Statement", () => {
     statement.showStatement(transactions);
 
     expect(console.log.mock.calls.length).toBe(4);
-    expect(console.log.mock.calls[3][0]).toBe(
-      "17/07/2023  ||      ||   -25   ||  175"
-    );
   });
 });

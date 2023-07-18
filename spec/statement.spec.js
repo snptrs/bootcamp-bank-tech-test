@@ -27,7 +27,7 @@ describe("Statement", () => {
       "date        || credit || debit || balance"
     );
     expect(console.log.mock.calls[1][0]).toBe(
-      `05/07/2023  ||      ||   -50   ||  -50`
+      `05/07/2023  ||      ||   -50.00   ||  -50.00`
     );
   });
 
@@ -44,7 +44,7 @@ describe("Statement", () => {
       "date        || credit || debit || balance"
     );
     expect(console.log.mock.calls[1][0]).toBe(
-      `05/07/2023  ||   50   ||      ||  50`
+      `05/07/2023  ||   50.00   ||      ||  50.00`
     );
   });
 
@@ -67,10 +67,10 @@ describe("Statement", () => {
       "date        || credit || debit || balance"
     );
     expect(console.log.mock.calls[1][0]).toBe(
-      `05/07/2023  ||   50   ||      ||  50`
+      `05/07/2023  ||   50.00   ||      ||  50.00`
     );
     expect(console.log.mock.calls[2][0]).toBe(
-      `10/07/2023  ||      ||   -10   ||  40`
+      `10/07/2023  ||      ||   -10.00   ||  40.00`
     );
   });
 });
