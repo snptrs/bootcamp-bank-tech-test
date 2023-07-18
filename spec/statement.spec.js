@@ -73,4 +73,10 @@ describe("Statement", () => {
       `10/07/2023  ||      ||   -10.00   ||  40.00`
     );
   });
+
+  it("doesn't produce an error if no transactions are passed in", () => {
+    const statement = new Statement();
+    statement.showStatement();
+    expect(console.log.mock.calls.length).toBe(1);
+  });
 });
