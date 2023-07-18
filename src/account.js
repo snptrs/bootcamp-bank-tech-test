@@ -13,6 +13,8 @@ class Account {
   }
 
   getBalance() {
+    // If there's at least one transaction in the array, return the balance
+    // from the latest transaction. Otherwise, balance is 0.
     if (this.transactions.length > 0) {
       return this.transactions.at(-1).balance;
     } else {
