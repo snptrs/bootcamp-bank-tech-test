@@ -4,22 +4,25 @@ class Statement {
   showStatement(transactions) {
     console.log("date        || credit || debit || balance");
 
-    transactions.forEach((item) => {
-      const debit =
-        item.amount < 0 ? Number.parseFloat(item.amount).toFixed(2) : "";
-      const credit =
-        item.amount > 0 ? Number.parseFloat(item.amount).toFixed(2) : "";
-      const balance = Number.parseFloat(item.balance).toFixed(2);
+    if (transactions) {
+      transactions.forEach((item) => {
+        // Convert all amounts to floats with 2 decimal places
+        const debit =
+          item.amount < 0 ? Number.parseFloat(item.amount).toFixed(2) : "";
+        const credit =
+          item.amount > 0 ? Number.parseFloat(item.amount).toFixed(2) : "";
+        const balance = Number.parseFloat(item.balance).toFixed(2);
 
-      const date = new Date(item.date);
-      const formattedDate = new Intl.DateTimeFormat("en-GB", {
-        dateStyle: "short",
-      }).format(date);
+        const date = new Date(item.date);
+        const formattedDate = new Intl.DateTimeFormat("en-GB", {
+          dateStyle: "short",
+        }).format(date);
 
-      console.log(
-        `${formattedDate}  ||   ${credit}   ||   ${debit}   ||  ${balance}`
-      );
-    });
+        console.log(
+          `${formattedDate}  ||   ${credit}   ||   ${debit}   ||  ${balance}`
+        );
+      });
+    }
   }
 }
 
