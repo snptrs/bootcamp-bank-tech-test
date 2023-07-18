@@ -5,14 +5,19 @@ class Statement {
     console.log("date        || credit || debit || balance");
 
     transactions.forEach((item) => {
-      const debit = item.amount < 0 ? item.amount : "";
-      const credit = item.amount > 0 ? item.amount : "";
+      const debit =
+        item.amount < 0 ? Number.parseFloat(item.amount).toFixed(2) : "";
+      const credit =
+        item.amount > 0 ? Number.parseFloat(item.amount).toFixed(2) : "";
+      const balance = Number.parseFloat(item.balance).toFixed(2);
+
       const date = new Date(item.date);
       const formattedDate = new Intl.DateTimeFormat("en-GB", {
         dateStyle: "short",
       }).format(date);
+
       console.log(
-        `${formattedDate}  ||   ${credit}   ||   ${debit}   ||  ${item.balance}`
+        `${formattedDate}  ||   ${credit}   ||   ${debit}   ||  ${balance}`
       );
     });
   }
