@@ -1,6 +1,6 @@
 # README
 
-This is a simple backing application that allows a user to interact with their account via the Node REPL.
+This is a simple banking application that allows a user to interact with their account via the Node REPL.
 
 A client can make deposits and withdrawals, and generate a statement showing their transactions.
 
